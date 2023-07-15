@@ -1,0 +1,4 @@
+require 'active_support/lazy_load_hooks'
+require "accepts_nested_attributes_for_public_id/version"
+require "accepts_nested_attributes_for_public_id/method_contracts"
+require "accepts_nested_attributes_for_public_id/method_patches"
