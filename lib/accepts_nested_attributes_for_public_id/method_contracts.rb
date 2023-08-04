@@ -1,7 +1,7 @@
 module AcceptsNestedAttributesForPublicId
   def verify_method_contract!(method, contract)
     if method.source.strip.gsub(/^\s*/, "") != contract.strip.gsub(/^\s*/, "")
-      raise RuntimeError.new("Method definition contract violated for '#{self.class.name}##{method.name}', cannot apply patch for accepts_nested_attribute_for_public_id")
+      raise RuntimeError.new("Method definition contract violated for '#{self.class.name}##{method.name}', cannot apply patch for accepts_nested_attributes_for_public_id")
     end
   end
   module_function :verify_method_contract!

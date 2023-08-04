@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   has_one :has_one_comment_with_accepts_nested_attributes_for_public_id_column, class_name: "CommentWithToParamColumn"
   accepts_nested_attributes_for :has_one_comment_with_accepts_nested_attributes_for_public_id_column
 
-  ### accepts_nested_attribute_for public_id_column
+  ### public_id_column argument
   has_many :comments_with_public_id_column, class_name: "Comment"
   accepts_nested_attributes_for :comments_with_public_id_column, public_id_column: :content
 

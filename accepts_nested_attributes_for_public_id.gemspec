@@ -2,7 +2,7 @@ require_relative 'lib/accepts_nested_attributes_for_public_id/version'
 
 Gem::Specification.new do |s|
   s.name          = "accepts_nested_attributes_for_public_id"
-  s.version       = "1.0.0"
+  s.version       = AcceptsNestedAttributesForPublicId::VERSION
   s.authors       = ["Weston Ganger"]
   s.email         = ["weston@westonganger.com"]
 
