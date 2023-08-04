@@ -1,7 +1,13 @@
 module AcceptsNestedAttributesForPublicId
+  ALLOWED_VIOLATIONS = [
+    ->(method) { Rails::VERSION::MAJOR < 7 && method.name == :assign_nested_attributes_for_collection_association }, ### small change from `map.compact` to `filter_map`
+    ->(method) { Rails::VERSION::MAJOR < 7 && method.name == :fields_for_with_nested_attributes }, ### small syntax change
+  ]
+
   def verify_method_contract!(method, contract)
     if method.source.strip.gsub(/^\s*/, "") != contract.strip.gsub(/^\s*/, "")
-      raise RuntimeError.new("Method definition contract violated for '#{self.class.name}##{method.name}', cannot apply patch for accepts_nested_attributes_for_public_id")
+      return if ALLOWED_VIOLATIONS.any?{|x| x.call(method) }
+      raise RuntimeError.new("Method definition contract violated for '#{method.owner}##{method.name}', cannot apply patch for accepts_nested_attributes_for_public_id")
     end
   end
   module_function :verify_method_contract!

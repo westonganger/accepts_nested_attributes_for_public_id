@@ -188,7 +188,7 @@ ActiveSupport.on_load(:active_record) do
         existing_records = if association.loaded?
           association.target
         else
-          attribute_ids = attributes_collection.filter_map { |a| a["id"] || a[:id] }
+          attribute_ids = attributes_collection.map { |a| a["id"] || a[:id] }.compact
           ### ORIGINAL
           # attribute_ids.empty? ? [] : association.scope.where(association.klass.primary_key => attribute_ids)
           ### NEW
