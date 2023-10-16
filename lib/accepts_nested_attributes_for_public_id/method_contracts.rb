@@ -1,3 +1,5 @@
+require "method_source"
+
 module AcceptsNestedAttributesForPublicId
   ALLOWED_VIOLATIONS = [
     ->(method) { Rails::VERSION::MAJOR < 7 && method.name == :assign_nested_attributes_for_collection_association }, ### small change from `map.compact` to `filter_map`

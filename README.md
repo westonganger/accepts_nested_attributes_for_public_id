@@ -73,7 +73,6 @@ We can locally test different versions of Rails using `ENV['RAILS_VERSION']` and
 
 ```
 export RAILS_VERSION=7.0
-export DB_GEM=sqlite3
 bundle install
 bundle exec rspec
 ```
