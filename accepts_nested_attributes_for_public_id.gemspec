@@ -24,7 +24,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "database_cleaner"
   s.add_development_dependency "rails-controller-testing"
-  s.add_development_dependency "rails"
   s.add_development_dependency "warning"
   s.add_development_dependency "pry-rails"
 end

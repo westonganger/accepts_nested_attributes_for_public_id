@@ -1,7 +1,10 @@
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in active_snapshot.gemspec
 gemspec
 
-gem 'rails', ENV["RAILS_VERSION"]
-gem 'sqlite3'
+def get_env(name)
+  (ENV[name] && !ENV[name].empty?) ? ENV[name] : nil
+end
+
+gem "rails", get_env("RAILS_VERSION")
+gem "sqlite3"
