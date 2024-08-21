@@ -13,6 +13,8 @@ Why:
 - By default ActiveRecord and `accepts_nested_attributes_for` does not respect `to_param` or provide any ability to utilize a public ID column. This results in your DB primary keys being exposed in your forms.
 - This was [extracted from a PR to Rails core](https://github.com/rails/rails/pull/48390) until this functionality is otherwise achievable in Rails core proper.
 
+> **DEPRECATED: I am archiving this gem. While this was a good experiment, maintaining this gem is not sustainable. If you wanted to patch this in you would be better off copying this gems code and contract checks techniques directly into your own individual application to ensure that you dont cause breakage. The contract technique did work well but making the gem cross Rails-version compatible was just not really sustainable for a gem.**
+
 # Installation
 
 ```ruby
